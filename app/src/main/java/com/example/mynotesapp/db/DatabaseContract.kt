@@ -1,12 +1,9 @@
 package com.example.mynotesapp.db
 
-import android.net.Uri
 import android.provider.BaseColumns
 
-object DatabaseContract {
+internal class DatabaseContract {
 
-    const val AUTHORITY = "com.example.mynotesapp.db"
-    const val SCHEME = "content"
 
     internal class NoteColumns : BaseColumns {
         companion object {
@@ -15,11 +12,6 @@ object DatabaseContract {
             const val TITLE = "title"
             const val DESCRIPTION = "description"
             const val DATE = "date"
-
-            val CONTENT_URI: Uri = Uri.Builder().scheme(SCHEME)
-                .authority(AUTHORITY)
-                .appendPath(TABLE_NAME)
-                .build()
         }
     }
 }
